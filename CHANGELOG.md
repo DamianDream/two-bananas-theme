@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial release of the Two Bananas theme family: **Dark**, **Soft Dark**, and **High Contrast**.
-- Brand palette: Banana Yellow `#FED141` on Brand Black `#1F1F21`.
+- Brand palette: Banana Yellow `#FED141` on Brand Black `#171717`.
 - Token-driven build pipeline (`design-tokens.ts` → `build.ts` → `themes/*.json`).
 - Two-layer syntax highlighting: semantic tokens (LSP) with TextMate fallback.
 - Full 16-color terminal ANSI palette and git decoration colors.

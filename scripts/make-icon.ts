@@ -3,7 +3,7 @@
  * Run: npm run build:icon
  *
  * Renders two banana crescents in Brand Yellow #FED141 on a rounded
- * Brand Black #1F1F21 square. Pure Node (zlib) — no native image deps,
+ * Brand Black #171717 square. Pure Node (zlib) — no native image deps,
  * so the icon is reproducible on any machine and in CI.
  */
 import { writeFileSync, mkdirSync } from "fs";
@@ -13,7 +13,7 @@ const SIZE = 128;
 const SS = 4; // supersampling factor for anti-aliasing
 const W = SIZE * SS;
 
-const BLACK = [0x1f, 0x1f, 0x21];
+const BLACK = [0x17, 0x17, 0x17];
 const YELLOW = [0xfe, 0xd1, 0x41];
 const TIP = [0x8a, 0x6d, 0x1f]; // darker banana tip
 

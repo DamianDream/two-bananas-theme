@@ -3,7 +3,7 @@
  * Single Source of Truth for every Two Bananas theme variant.
  * Primitives -> Semantic roles -> (in build.ts) VS Code Theme JSON.
  *
- * Brand canon: Brand Yellow #FED141 on Brand Black #1F1F21.
+ * Brand canon: Brand Yellow #FED141 on Brand Black #171717 (pure neutral).
  */
 import { colord, extend } from "colord";
 import a11yPlugin from "colord/plugins/a11y";
@@ -13,37 +13,38 @@ extend([a11yPlugin, mixPlugin]);
 export type Variant = "dark" | "soft" | "hc";
 
 /** 1. PRIMITIVES — raw colors, no semantic meaning.
- *  All contrast ratios below are vs #1F1F21 (editor background). */
+ *  All contrast ratios below are vs #171717 (editor background).
+ *  Backgrounds are pure neutral grays (R=G=B) — no warm/cool cast. */
 const primitives = {
   banana: {
-    bg0: "#1f1f21", // Brand Black — editor background
-    bg1: "#1a1a1c", // chrome: sidebar / activity bar / status bar / title bar / panel
-    bg2: "#2a2a2e", // line highlight, hover, inactive selection
-    bg3: "#3a393d", // borders, separators
-    fg0: "#e8e6e3", // body text, warm neutral (13.2:1)
-    fg1: "#a8a29c", // secondary text / comments (6.5:1)
+    bg0: "#171717", // Brand Black — editor background
+    bg1: "#121212", // chrome: sidebar / activity bar / status bar / title bar / panel
+    bg2: "#232323", // line highlight, hover, inactive selection
+    bg3: "#343434", // borders, separators
+    fg0: "#e8e6e3", // body text, warm neutral (14.4:1)
+    fg1: "#a8a29c", // secondary text / comments (7.1:1)
     fg2: "#6e6a64", // disabled / line numbers / placeholders
-    accentYellow: "#fed141", // Brand Yellow (11.3:1) — cursor, focus, badges, functions
-    accentGold: "#f0b429", //   constants, numbers, readonly (8.8:1)
-    accentOrange: "#f2994a", // tags, regex, modified (7.4:1)
-    accentGreen: "#a5cc6b", //  strings (9.0:1)
-    accentTeal: "#4ec9b0", //   types, classes, interfaces (8.1:1)
-    accentBlue: "#6cb6ff", //   properties, links, info (7.7:1)
-    accentPurple: "#c39be8", // keywords, operators (7.2:1)
-    accentRed: "#f97583", //    errors, invalid, deleted (6.2:1)
+    accentYellow: "#fed141", // Brand Yellow (12.3:1) — cursor, focus, badges, functions
+    accentGold: "#f0b429", //   constants, numbers, readonly (9.6:1)
+    accentOrange: "#f2994a", // tags, regex, modified (8.1:1)
+    accentGreen: "#a5cc6b", //  strings (9.8:1)
+    accentTeal: "#4ec9b0", //   types, classes, interfaces (8.8:1)
+    accentBlue: "#6cb6ff", //   properties, links, info (8.3:1)
+    accentPurple: "#c39be8", // keywords, operators (7.8:1)
+    accentRed: "#f97583", //    errors, invalid, deleted (6.7:1)
   },
 } as const;
 
 /** Brand constants — referenced directly for on-accent pairings (buttons, badges). */
 export const brand = {
   accent: "#fed141",
-  onAccent: "#1f1f21",
+  onAccent: "#171717",
 } as const;
 
 /** Full 16-color ANSI set for the integrated terminal.
  *  Fixed hexes (not derived) for deterministic output. */
 const terminalAnsi = {
-  black: "#1f1f21",
+  black: "#171717",
   brightBlack: "#7a756e",
   red: "#f97583",
   brightRed: "#ff8a95",
@@ -61,8 +62,8 @@ const terminalAnsi = {
   brightWhite: "#ffffff",
 } as const;
 
-/** 2. Soft/Muted variant via color math. Warm anchor so Soft keeps the warm cast. */
-function toSoft(hex: string, towards = "#2b2a27", amount = 0.18) {
+/** 2. Soft/Muted variant via color math. Neutral anchor — backgrounds carry no cast. */
+function toSoft(hex: string, towards = "#262626", amount = 0.18) {
   return colord(hex).mix(towards, amount).toHex();
 }
 
@@ -85,7 +86,7 @@ export function buildPalette(variant: Variant) {
   const base = variant === "soft"
     ? {
         bg: toSoft(p.bg0), surface: toSoft(p.bg1), surfaceAlt: toSoft(p.bg2),
-        border: toSoft(p.bg3), text: toSoft(p.fg0, "#2b2a27", 0.08), textMuted: toSoft(p.fg1),
+        border: toSoft(p.bg3), text: toSoft(p.fg0, "#262626", 0.08), textMuted: toSoft(p.fg1),
         textDisabled: p.fg2,
       }
     : { bg: p.bg0, surface: p.bg1, surfaceAlt: p.bg2, border: p.bg3, text: p.fg0, textMuted: p.fg1, textDisabled: p.fg2 };

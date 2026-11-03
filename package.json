@@ -1,7 +1,7 @@
 {
   "name": "two-bananas-theme",
   "displayName": "Two Bananas",
-  "description": "Banana-yellow on brand-black (#FED141 / #1F1F21): a professionally engineered dark theme family with soft and high-contrast variants, semantic highlighting and WCAG-verified contrast — even comments stay readable (≥ 4.5:1).",
+  "description": "Banana-yellow on brand-black (#FED141 / #171717): a professionally engineered dark theme family with soft and high-contrast variants, semantic highlighting and WCAG-verified contrast — even comments stay readable (≥ 4.5:1).",
   "version": "1.0.0",
   "publisher": "dbatalshikov",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "semantic highlighting", "accessible", "wcag", "typescript", "python",
     "rust", "go", "banana", "yellow"
   ],
-  "galleryBanner": { "color": "#1F1F21", "theme": "dark" },
+  "galleryBanner": { "color": "#171717", "theme": "dark" },
   "icon": "images/icon.png",
   "repository": { "type": "git", "url": "https://github.com/DamianDream/two-bananas-theme.git" },
   "bugs": { "url": "https://github.com/DamianDream/two-bananas-theme/issues" },

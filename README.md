@@ -1,6 +1,6 @@
 # 🍌🍌 Two Bananas — VS Code Theme
 
-**Banana Yellow `#FED141` on Brand Black `#1F1F21`.** A professionally engineered dark
+**Banana Yellow `#FED141` on Brand Black `#171717`.** A professionally engineered dark
 theme family with mathematically derived variants, semantic highlighting, and a CI gate
 that refuses to ship unreadable colors.
 
@@ -12,9 +12,9 @@ that refuses to ship unreadable colors.
 
 | Variant | `uiTheme` | Background | For |
 |---|---|---|---|
-| **Two Bananas Dark** | `vs-dark` | `#1F1F21` | Everyday work |
+| **Two Bananas Dark** | `vs-dark` | `#171717` | Everyday work |
 | **Two Bananas Soft Dark** | `vs-dark` | warm-muted | Long evening sessions |
-| **Two Bananas High Contrast** | `hc-black` | `#1F1F21` | AAA body text (≥ 7:1) |
+| **Two Bananas High Contrast** | `hc-black` | `#171717` | AAA body text (≥ 7:1) |
 
 <!-- Screenshots must use absolute URLs — relative paths break on the web marketplace. -->
 ![Two Bananas Dark](https://raw.githubusercontent.com/DamianDream/two-bananas-theme/main/images/screenshot-dark.png)
@@ -23,20 +23,20 @@ that refuses to ship unreadable colors.
 
 ## Palette
 
-All ratios measured against the `#1F1F21` editor background.
+All ratios measured against the `#171717` editor background.
 
 | Role | Hex | Contrast |
 |---|---|---|
-| Brand Yellow — cursor, focus, badges, buttons, functions | `#FED141` | 11.3:1 |
-| Body text (warm neutral) | `#E8E6E3` | 13.2:1 |
-| Comments / secondary | `#A8A29C` | 6.5:1 |
-| Gold — constants, numbers, readonly | `#F0B429` | 8.8:1 |
-| Orange — tags, regex | `#F2994A` | 7.4:1 |
-| Green — strings | `#A5CC6B` | 9.0:1 |
-| Teal — types, classes, interfaces | `#4EC9B0` | 8.1:1 |
-| Blue — properties, links, info | `#6CB6FF` | 7.7:1 |
-| Purple — keywords, operators | `#C39BE8` | 7.2:1 |
-| Red — errors, invalid, deleted | `#F97583` | 6.2:1 |
+| Brand Yellow — cursor, focus, badges, buttons, functions | `#FED141` | 12.3:1 |
+| Body text (warm neutral) | `#E8E6E3` | 14.4:1 |
+| Comments / secondary | `#A8A29C` | 7.1:1 |
+| Gold — constants, numbers, readonly | `#F0B429` | 9.6:1 |
+| Orange — tags, regex | `#F2994A` | 8.1:1 |
+| Green — strings | `#A5CC6B` | 9.8:1 |
+| Teal — types, classes, interfaces | `#4EC9B0` | 8.8:1 |
+| Blue — properties, links, info | `#6CB6FF` | 8.3:1 |
+| Purple — keywords, operators | `#C39BE8` | 7.8:1 |
+| Red — errors, invalid, deleted | `#F97583` | 6.7:1 |
 
 Yellow is deliberately reserved for **two syntax roles** (functions/methods and
 decorators) plus UI brand moments — so it stays recognizable instead of becoming noise.
