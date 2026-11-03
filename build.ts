@@ -13,8 +13,15 @@ function withAlpha(hex: string, alpha: string): string {
   return hex + alpha;
 }
 
-function workbenchColors(pal: ReturnType<typeof buildPalette>) {
+const TRANSPARENT = "#00000000";
+
+function workbenchColors(pal: ReturnType<typeof buildPalette>, variant: Variant) {
   const { base, accents, brand, terminal } = pal;
+  // Borderless design: structural dividers are invisible in Dark/Soft — surface
+  // layering (chrome darker than the editor) does the separation. Borders are
+  // kept only on interactive controls (inputs, focus) and in High Contrast,
+  // where visible boundaries are an accessibility requirement.
+  const divider = variant === "hc" ? base.border : TRANSPARENT;
   return {
     // --- Editor core ---
     "editor.background": base.bg,
@@ -47,7 +54,7 @@ function workbenchColors(pal: ReturnType<typeof buildPalette>) {
     // --- Side bar / lists / trees ---
     "sideBar.background": base.surface,
     "sideBar.foreground": base.textMuted,
-    "sideBar.border": base.border,
+    "sideBar.border": divider,
     "sideBarTitle.foreground": base.text,
     "sideBarSectionHeader.background": base.surface,
     "sideBarSectionHeader.foreground": base.textMuted,
@@ -62,7 +69,7 @@ function workbenchColors(pal: ReturnType<typeof buildPalette>) {
     // --- Status bar ---
     "statusBar.background": base.surface,
     "statusBar.foreground": base.textMuted,
-    "statusBar.border": base.border,
+    "statusBar.border": divider,
     "statusBar.debuggingBackground": accents.gold,
     "statusBar.debuggingForeground": brand.onAccent,
     "statusBar.noFolderBackground": base.surface,
@@ -75,6 +82,7 @@ function workbenchColors(pal: ReturnType<typeof buildPalette>) {
     "titleBar.activeForeground": base.text,
     "titleBar.inactiveBackground": base.surface,
     "titleBar.inactiveForeground": base.textDisabled,
+    "tab.border": divider,
     "tab.activeBackground": base.bg,
     "tab.activeForeground": base.text,
     "tab.activeBorderTop": brand.accent,
@@ -82,7 +90,7 @@ function workbenchColors(pal: ReturnType<typeof buildPalette>) {
     "tab.inactiveForeground": base.textMuted,
     "tab.hoverBackground": base.surfaceAlt,
     "editorGroupHeader.tabsBackground": base.surface,
-    "editorGroup.border": base.border,
+    "editorGroup.border": divider,
 
     // --- Buttons / inputs / dropdowns (brand moment: yellow button, dark text) ---
     "button.background": brand.accent,
@@ -107,23 +115,26 @@ function workbenchColors(pal: ReturnType<typeof buildPalette>) {
     "progressBar.background": brand.accent,
 
     // --- Panels / widgets / peek / notifications ---
-    "panel.border": base.border,
+    // Floating widgets get depth from a shadow instead of a frame.
+    "panel.border": divider,
     "panel.background": base.surface,
-    "widget.border": base.border,
+    "widget.border": divider,
+    "widget.shadow": variant === "hc" ? TRANSPARENT : "#00000066",
+    "scrollbar.shadow": divider,
     "editorWidget.background": base.surface,
-    "editorWidget.border": base.border,
+    "editorWidget.border": divider,
     "editorSuggestWidget.background": base.surface,
     "editorSuggestWidget.selectedBackground": base.surfaceAlt,
     "editorSuggestWidget.highlightForeground": accents.yellow,
     "editorHoverWidget.background": base.surface,
-    "editorHoverWidget.border": base.border,
+    "editorHoverWidget.border": divider,
     "peekView.border": brand.accent,
     "peekViewEditor.background": base.surface,
     "peekViewResult.background": base.surface,
     "peekViewTitle.background": base.surfaceAlt,
     "notifications.background": base.surface,
     "notifications.foreground": base.text,
-    "notifications.border": base.border,
+    "notifications.border": divider,
     "notificationLink.foreground": accents.blue,
 
     // --- Scrollbar / minimap ---
@@ -244,7 +255,7 @@ function buildOne(variant: Variant, label: string, uiTheme: "vs-dark" | "hc-blac
     name: label,
     type: uiTheme === "hc-black" ? "hcDark" : "dark",
     semanticHighlighting: true,
-    colors: workbenchColors(pal),
+    colors: workbenchColors(pal, variant),
     tokenColors: tokenColors(pal),
     semanticTokenColors: semanticTokenColors(pal).rules,
   };
