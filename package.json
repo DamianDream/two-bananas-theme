@@ -1,0 +1,44 @@
+{
+  "name": "two-bananas-theme",
+  "displayName": "Two Bananas",
+  "description": "Banana-yellow on brand-black (#FED141 / #1F1F21): a professionally engineered dark theme family with soft and high-contrast variants, semantic highlighting and WCAG-verified contrast — even comments stay readable (≥ 4.5:1).",
+  "version": "1.0.0",
+  "publisher": "dbatalshikov",
+  "license": "MIT",
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["Themes"],
+  "keywords": [
+    "theme", "dark theme", "color theme", "soft dark", "high contrast",
+    "semantic highlighting", "accessible", "wcag", "typescript", "python",
+    "rust", "go", "banana", "yellow"
+  ],
+  "galleryBanner": { "color": "#1F1F21", "theme": "dark" },
+  "icon": "images/icon.png",
+  "repository": { "type": "git", "url": "https://github.com/dbatalshikov/two-bananas-theme.git" },
+  "bugs": { "url": "https://github.com/dbatalshikov/two-bananas-theme/issues" },
+  "homepage": "https://github.com/dbatalshikov/two-bananas-theme#readme",
+  "contributes": {
+    "themes": [
+      { "label": "Two Bananas Dark", "uiTheme": "vs-dark", "path": "./themes/dark-color-theme.json" },
+      { "label": "Two Bananas Soft Dark", "uiTheme": "vs-dark", "path": "./themes/soft-color-theme.json" },
+      { "label": "Two Bananas High Contrast", "uiTheme": "hc-black", "path": "./themes/hc-color-theme.json" }
+    ]
+  },
+  "scripts": {
+    "build:theme": "ts-node build.ts",
+    "build:icon": "ts-node scripts/make-icon.ts",
+    "test:contrast": "ts-node contrast-check.ts",
+    "test": "npm run build:theme && npm run test:contrast",
+    "vscode:prepublish": "npm test",
+    "package": "vsce package",
+    "publish:vsce": "vsce publish",
+    "publish:ovsx": "ovsx publish"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.0.0",
+    "ovsx": "^0.10.0",
+    "colord": "^2.9.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  }
+}
