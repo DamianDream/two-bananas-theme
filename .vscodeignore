@@ -8,3 +8,11 @@ node_modules/
 scripts/
 images/icon.svg
 samples/
+.factory/
+.entire/
+.cursor/
+.codex/
+.agents/
+.claude/
+.opencode/
+.pi/
