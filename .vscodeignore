@@ -1,0 +1,9 @@
+*.ts
+tsconfig.json
+node_modules/
+.github/
+.gitignore
+.vscodeignore
+*.vsix
+scripts/
+images/icon.svg
