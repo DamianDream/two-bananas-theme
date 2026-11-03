@@ -14,9 +14,9 @@
   ],
   "galleryBanner": { "color": "#1F1F21", "theme": "dark" },
   "icon": "images/icon.png",
-  "repository": { "type": "git", "url": "https://github.com/dbatalshikov/two-bananas-theme.git" },
-  "bugs": { "url": "https://github.com/dbatalshikov/two-bananas-theme/issues" },
-  "homepage": "https://github.com/dbatalshikov/two-bananas-theme#readme",
+  "repository": { "type": "git", "url": "https://github.com/DamianDream/two-bananas-theme.git" },
+  "bugs": { "url": "https://github.com/DamianDream/two-bananas-theme/issues" },
+  "homepage": "https://github.com/DamianDream/two-bananas-theme#readme",
   "contributes": {
     "themes": [
       { "label": "Two Bananas Dark", "uiTheme": "vs-dark", "path": "./themes/dark-color-theme.json" },

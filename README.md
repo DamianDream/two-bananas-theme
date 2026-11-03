@@ -17,9 +17,9 @@ that refuses to ship unreadable colors.
 | **Two Bananas High Contrast** | `hc-black` | `#1F1F21` | AAA body text (≥ 7:1) |
 
 <!-- Screenshots must use absolute URLs — relative paths break on the web marketplace. -->
-![Two Bananas Dark](https://raw.githubusercontent.com/dbatalshikov/two-bananas-theme/main/images/screenshot-dark.png)
-![Two Bananas Soft Dark](https://raw.githubusercontent.com/dbatalshikov/two-bananas-theme/main/images/screenshot-soft.png)
-![Two Bananas High Contrast](https://raw.githubusercontent.com/dbatalshikov/two-bananas-theme/main/images/screenshot-hc.png)
+![Two Bananas Dark](https://raw.githubusercontent.com/DamianDream/two-bananas-theme/main/images/screenshot-dark.png)
+![Two Bananas Soft Dark](https://raw.githubusercontent.com/DamianDream/two-bananas-theme/main/images/screenshot-soft.png)
+![Two Bananas High Contrast](https://raw.githubusercontent.com/DamianDream/two-bananas-theme/main/images/screenshot-hc.png)
 
 ## Palette
 
